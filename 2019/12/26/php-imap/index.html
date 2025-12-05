@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>php-imap | Harthali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="php imap 收信使用,imap扩展安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="php-imap">
+<meta property="og:url" content="https://lihengtt.github.io/2019/12/26/php-imap/index.html">
+<meta property="og:site_name" content="Harthali">
+<meta property="og:description" content="php imap 收信使用,imap扩展安装">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-12-26T09:15:48.000Z">
+<meta property="article:modified_time" content="2025-12-05T07:15:58.171Z">
+<meta property="article:author" content="李恒">
+<meta property="article:tag" content="imap">
+<meta property="article:tag" content="php">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Harthali" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Harthali</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">脑子可能有点不正常</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lihengtt.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-php-imap" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/12/26/php-imap/" class="article-date">
+  <time class="dt-published" datetime="2019-12-26T09:15:48.000Z" itemprop="datePublished">2019-12-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      php-imap
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>不多bb，直接切入主题，有什么需要就用什么招！</p>
+<span id="more"></span>
+<p>首先安装扩展，看shell</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> ~/Downloads</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">wget https://www.php.net/distributions/php-7.2.1.tar.gz</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">gunzip php-7.2.1.tar.gz</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">tar xvf php-7.2.1.tar</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">如果已有了php环境的话，前面步骤直接跳过，</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cd</span> php-7.2.1/ext/imap</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">mac os phpize报错的话，试试这个shell，实在不行就google</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="built_in">sudo</span> <span class="built_in">ln</span> -s /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include/ /usr/include</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">phpize</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">如果使用的是linux的话 yum install -y libc-client-* 或者apt-get</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">brew install openssl</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">brew install imap-uw</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">请确认自己的openssl安装路径，以免发生误会</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">./configure --with-kerberos --with-imap-ssl=/usr/local/Cellar/openssl/1.0.2r/ --with-imap=/usr/local/Cellar/imap-uw/2007f/</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">make</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">获取扩展路径</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">php -i | grep extension_dir</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">extension_dir =&gt; /usr/lib/php/extensions/no-debug-non-zts-20160303 =&gt; /usr/lib/php/extensions/no-debug-non-zts-20160303</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">sqlite3.extension_dir =&gt; no value =&gt; no value</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash"><span class="built_in">cp</span> modules/imap.so /usr/lib/php/extensions/no-debug-non-zts-20160303</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">最后在php.ini添加扩展</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">[imap]</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">extension=<span class="string">&quot;imap.so&quot;</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>linux的比较简单，mac os 系统下面略坑，brew 不带imap源码包。</p>
+<p>linux下面不用这么复杂，编译了过后直接在php.ini配置文件里面添加扩展文件即可。</p>
+<p>##使用imap<br>我使用了一个轮子给大家推荐一下</p>
+<figure class="highlight plaintext"><figcaption><span>log</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ composer require php-imap/php-imap</span><br></pre></td></tr></table></figure>
+<p>地址和安装要求自行去看看：<a target="_blank" rel="noopener" href="https://github.com/barbushin/php-imap">https://github.com/barbushin/php-imap</a></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Create PhpImap\Mailbox instance for all further actions</span></span><br><span class="line"><span class="variable">$mailbox</span> = <span class="keyword">new</span> <span class="title class_">PhpImap\Mailbox</span>(</span><br><span class="line">	<span class="string">&#x27;&#123;imap.gmail.com:993/imap/ssl&#125;INBOX&#x27;</span>, <span class="comment">// IMAP server and mailbox folder</span></span><br><span class="line">	<span class="string">&#x27;some@gmail.com&#x27;</span>, <span class="comment">// Username for the before configured mailbox</span></span><br><span class="line">	<span class="string">&#x27;*********&#x27;</span>, <span class="comment">// Password for the before configured username</span></span><br><span class="line">	<span class="keyword">__DIR__</span>, <span class="comment">// Directory, where attachments will be saved (optional)</span></span><br><span class="line">	<span class="string">&#x27;UTF-8&#x27;</span> <span class="comment">// Server encoding (optional)</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="comment">// Get all emails (messages)</span></span><br><span class="line">	<span class="comment">// PHP.net imap_search criteria: http://php.net/manual/en/function.imap-search.php</span></span><br><span class="line">	<span class="variable">$mailsIds</span> = <span class="variable">$mailbox</span>-&gt;<span class="title function_ invoke__">searchMailbox</span>(<span class="string">&#x27;ALL&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span>(PhpImap\Exceptions\ConnectionException <span class="variable">$ex</span>) &#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;IMAP connection failed: &quot;</span> . <span class="variable">$ex</span>;</span><br><span class="line">	<span class="keyword">die</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// If $mailsIds is empty, no emails could be found</span></span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$mailsIds</span>) &#123;</span><br><span class="line">	<span class="keyword">die</span>(<span class="string">&#x27;Mailbox is empty&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Get the first message</span></span><br><span class="line"><span class="comment">// If &#x27;__DIR__&#x27; was defined in the first line, it will automatically</span></span><br><span class="line"><span class="comment">// save all attachments to the specified directory</span></span><br><span class="line"><span class="variable">$mail</span> = <span class="variable">$mailbox</span>-&gt;<span class="title function_ invoke__">getMail</span>(<span class="variable">$mailsIds</span>[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Show, if $mail has one or more attachments</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;\nMail has attachments? &quot;</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$mail</span>-&gt;<span class="title function_ invoke__">hasAttachments</span>()) &#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;Yes\n&quot;</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">&quot;No\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Print all information of $mail</span></span><br><span class="line"><span class="title function_ invoke__">print_r</span>(<span class="variable">$mail</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Print all attachements of $mail</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;\n\nAttachments:\n&quot;</span>;</span><br><span class="line"><span class="title function_ invoke__">print_r</span>(<span class="variable">$mail</span>-&gt;<span class="title function_ invoke__">getAttachments</span>());</span><br></pre></td></tr></table></figure>
+<p>邮件检索命令的话可以自行google</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mailsIds</span> = <span class="variable">$mailbox</span>-&gt;<span class="title function_ invoke__">searchMailbox</span>(<span class="string">&#x27;UNSEEN&#x27;</span>); <span class="comment">//设置读取邮件条件</span></span><br></pre></td></tr></table></figure>
+
+<p>over～</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lihengtt.github.io/2019/12/26/php-imap/" data-id="cuidIuXZ2f_GZMC3YrWyQ-N_q" data-title="php-imap" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/imap/" rel="tag">imap</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/php/" rel="tag">php</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/01/06/thinkphp%E8%B0%83%E7%94%A8sqlserver%E5%82%A8%E5%AD%98%E8%BF%87%E7%A8%8B%E8%BF%94%E5%9B%9E%E5%A4%9A%E4%B8%AA%E7%BB%93%E6%9E%9C%E9%9B%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          thinkphp调用sqlserver储存过程返回多个结果集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/24/HTMLInputElement/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTMLInputElement es call input change Event</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Centos/" rel="tag">Centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome%E6%8F%92%E4%BB%B6/" rel="tag">Chrome插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES/" rel="tag">ES</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Vision/" rel="tag">Google Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5%E7%BD%91%E9%A1%B5%E5%94%A4%E9%86%92app/" rel="tag">H5网页唤醒app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Laravel/" rel="tag">Laravel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OCR/" rel="tag">OCR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHPSTORM/" rel="tag">PHPSTORM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SOCKS5/" rel="tag">SOCKS5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH2/" rel="tag">SSH2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheme/" rel="tag">Scheme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asyncio/" rel="tag">asyncio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/imap/" rel="tag">imap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intent/" rel="tag">intent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-fpm/" rel="tag">php-fpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recat/" rel="tag">recat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swoole/" rel="tag">swoole</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tcp/" rel="tag">tcp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/" rel="tag">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5IO/" rel="tag">异步IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%BA%E7%A8%8B/" rel="tag">携程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E6%98%8E/" rel="tag">申明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81/" rel="tag">编码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Centos/" style="font-size: 10px;">Centos</a> <a href="/tags/Chrome%E6%8F%92%E4%BB%B6/" style="font-size: 12.5px;">Chrome插件</a> <a href="/tags/ES/" style="font-size: 15px;">ES</a> <a href="/tags/Google-Vision/" style="font-size: 10px;">Google Vision</a> <a href="/tags/H5%E7%BD%91%E9%A1%B5%E5%94%A4%E9%86%92app/" style="font-size: 10px;">H5网页唤醒app</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/OCR/" style="font-size: 10px;">OCR</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PHPSTORM/" style="font-size: 10px;">PHPSTORM</a> <a href="/tags/SOCKS5/" style="font-size: 10px;">SOCKS5</a> <a href="/tags/SSH2/" style="font-size: 10px;">SSH2</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/asyncio/" style="font-size: 10px;">asyncio</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/imap/" style="font-size: 10px;">imap</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 12.5px;">mysql</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/php-fpm/" style="font-size: 10px;">php-fpm</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/recat/" style="font-size: 10px;">recat</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swoole/" style="font-size: 10px;">swoole</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/%E5%BC%82%E6%AD%A5IO/" style="font-size: 10px;">异步IO</a> <a href="/tags/%E6%90%BA%E7%A8%8B/" style="font-size: 10px;">携程</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%94%B3%E6%98%8E/" style="font-size: 10px;">申明</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 10px;">编码</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">设计</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/01/ssh2%E6%8F%90%E7%A4%BA%E6%97%A0%E6%B3%95%E4%BA%A4%E6%8D%A2%E5%8A%A0%E5%AF%86%E5%AF%86%E9%92%A5/">ssh2提示无法交换加密密钥</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/17/%E8%B4%9F%E8%BD%BD%E6%8E%92%E6%9F%A5%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/">负载排查日志记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/02/Laravel-Vue-api%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/">Laravel-Vue-api数据加密解密</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/09/SOCKS5%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/">SOCKS5一键脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 李恒<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

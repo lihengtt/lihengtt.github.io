@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>PHP编写守护进程 | Harthali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="PHP 创建守护进程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP编写守护进程">
+<meta property="og:url" content="https://lihengtt.github.io/2019/08/05/PHP%E7%BC%96%E5%86%99%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Harthali">
+<meta property="og:description" content="PHP 创建守护进程">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-08-05T03:41:44.000Z">
+<meta property="article:modified_time" content="2025-12-05T07:15:58.176Z">
+<meta property="article:author" content="李恒">
+<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="swoole">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Harthali" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Harthali</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">脑子可能有点不正常</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://lihengtt.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-PHP编写守护进程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2019/08/05/PHP%E7%BC%96%E5%86%99%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2019-08-05T03:41:44.000Z" itemprop="datePublished">2019-08-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      PHP编写守护进程
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>进程根据状态可以分为三种进程，守护进程，僵尸进程，孤儿进程。今天我们着重来分析下守护进程。</p>
+<h3 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h3>  <hr />
+  #### 简介
+  <span id="more"></span>
+  守护进程 (daemon) 是一类在后台运行的特殊进程，用于执行特定的系统任务。很多守护进程在系统引导的时候启动，并且一直运行直到系统关闭。另一些只在需要的时候才启动，完成任务后就自动结束。
+  
+<h4 id="创建步骤"><a href="#创建步骤" class="headerlink" title="创建步骤"></a>创建步骤</h4></li>
+</ul>
+<p>####1. 创建子进程，终止父进程<br>    由于守护进程是脱离控制终端的，因此首先创建子进程，终止父进程，使得程序在 shell 终端里造成一个已经运行完毕的假象。<br>    之后所有的工作都在子进程中完成，而用户在 shell 终端里则可以执行其他的命令，从而使得程序以僵尸进程形式运行，在形式 I 上做到了与控制终端的脱离。<br>####2. 在子进程中创建新会话<br>    这个步骤是创建守护进程中最重要的一步，在这里使用的是系统函数 setsid。<br>    setsid 函数用于创建一个新的会话，并担任该会话组的组长。<br>    调用 setsid 的三个作用：让进程摆脱原会话的控制、让进程摆脱原进程组的控制和让进程摆脱原控制终端的控制。<br>    在调用 fork 函数时，子进程全盘拷贝父进程的会话期 (session，是一个或多个进程组的集合)、进程组、控制终端等，虽然父进程退出了，但原先的会话期、进程组、控制终端等并没有改变，因此，那还不是真正意义上使两者独立开来。<br>    setsid 函数能够使进程完全独立出来，从而脱离所有其他进程的控制。</p>
+<p>####3. 改变工作目录<br>    使用fork创建的子进程会继承父进程的当前工作目录。<br>    由于子进程运行的过程中，当前目录所在的文件系统不能被卸载，因此，我们需要把当前工作目录换成其他路径，如<code>/</code>或<code>/tmp</code>等。<br>    改变工作目录的常见函数是chdir。<br>####4. 重设文件创建掩码<br>    文件创建掩码是指屏蔽掉文件创建时的对应位。<br>    由于使用 fork 函数新建的子进程继承了父进程的文件创建掩码，这就给该子进程使用文件带来了诸多的麻烦。<br>    因此，把文件创建掩码设置为 0，可以大大增强该守护进程的灵活性。<br>    设置文件创建掩码的函数是 umask，通常的使用方法为 umask (0)。<br>####5. 关闭文件描述符<br>    用 fork 新建的子进程会从父进程那里继承一些已经打开了的文件。<br>    这些被打开的文件可能永远不会被守护进程读或写，但它们一样消耗系统资源，可能导致所在的文件系统无法卸载。<br>    在上面的第二步之后，守护进程已经与所属的控制终端失去了联系。<br>    因此从终端输入的字符不可能达到守护进程，守护进程中用常规方法（如printf）输出的字符也不可能在终端上显示出来。<br>    所以，文件描述符为0、1和2 的3个文件（常说的输入、输出和报错）已经失去了存在的价值，也应被关闭。</p>
+<p>##code：</p>
+<pre><code class="language-php">&lt;?php
+
+class Deamon
+{
+    protected $_pidFile;
+
+    public function __construct()
+    {
+        $this-&gt;_pidFile = &#39;/var/www/html/queue/public/pid.log&#39;;
+        $this-&gt;_checkPcntl();
+    }
+
+    /**
+     * 创建守护进程核心函数
+     * @return string|void
+     */
+    private function _demonize()
+    {
+        if (php_sapi_name() != &#39;cli&#39;) {
+            die(&#39;Should run in CLI&#39;);
+        }
+        //创建子进程
+        $pid = pcntl_fork();
+        if ($pid == -1) {
+            return &#39;fork faile&#39;;
+        } elseif ($pid) {
+            //终止父进程
+            exit(&#39;parent process&#39;);
+        }
+        //在子进程中创建新的会话
+        if (posix_setsid() === -1) {
+            die(&#39;Could not detach&#39;);
+        }
+        //改变工作目录
+        chdir(&#39;/&#39;);
+        //重设文件创建的掩码
+        umask(0);
+        $fp = fopen($this-&gt;_pidFile, &#39;w&#39;) or die(&quot;Can&#39;t create pid file&quot;);
+        //把当前进程的id写入到文件中
+        fwrite($fp, posix_getpid());
+        fclose($fp);
+        //关闭文件描述符
+        fclose(STDIN);
+        fclose(STDOUT);
+        fclose(STDERR);
+        //运行守护进程的逻辑
+        $this-&gt;job();
+        return;
+    }
+
+    /**
+     * 守护进程的任务
+     */
+    private function job()
+    {
+        //TODO 你的守护经常需要执行的任务
+        while (true) {
+            file_put_contents(&#39;/var/www/html/queue/public/job.log&#39;, &#39;job&#39; . PHP_EOL, FILE_APPEND);
+            sleep(5);
+        }
+    }
+
+    /**
+     * 获取守护进程的id
+     * @return int
+     */
+    private function _getPid()
+    {
+        //判断存放守护进程id的文件是否存在
+        if (!file_exists($this-&gt;_pidFile)) {
+            return 0;
+        }
+        $pid = intval(file_get_contents($this-&gt;_pidFile));
+        if (posix_kill($pid, SIG_DFL)) {//判断该进程是否正常运行中
+            return $pid;
+        } else {
+            unlink($this-&gt;_pidFile);
+            return 0;
+        }
+    }
+
+    /**
+     * 判断pcntl拓展
+     */
+    private function _checkPcntl()
+    {
+        !function_exists(&#39;pcntl_signal&#39;) &amp;&amp; die(&#39;Error:Need PHP Pcntl extension!&#39;);
+    }
+
+    private function _message($message)
+    {
+        printf(&quot;%s  %d %d  %s&quot; . PHP_EOL, date(&quot;Y-m-d H:i:s&quot;), posix_getpid(), posix_getppid(), $message);
+    }
+
+    /**
+     * 开启守护进程
+     */
+    private function start()
+    {
+        if ($this-&gt;_getPid() &gt; 0) {
+            $this-&gt;_message(&#39;Running&#39;);
+        } else {
+            $this-&gt;_demonize();
+            $this-&gt;_message(&#39;Start&#39;);
+        }
+    }
+
+    /**
+     * 停止守护进程
+     */
+    private function stop()
+    {
+        $pid = $this-&gt;_getPid();
+        if ($pid &gt; 0) {
+            //通过向进程id发送终止信号来停止进程
+            posix_kill($pid, SIGTERM);
+            unlink($this-&gt;_pidFile);
+            echo &#39;Stoped&#39; . PHP_EOL;
+        } else {
+            echo &quot;Not Running&quot; . PHP_EOL;
+        }
+    }
+
+    private function status()
+    {
+        if ($this-&gt;_getPid() &gt; 0) {
+            $this-&gt;_message(&#39;Is Running&#39;);
+        } else {
+            echo &#39;Not Running&#39; . PHP_EOL;
+        }
+    }
+
+    public function run($argv)
+    {
+        $param = is_array($argv) &amp;&amp; count($argv) == 2 ? $argv[1] : null;
+        switch ($param) {
+            case &#39;start&#39;:
+                $this-&gt;start();
+                break;
+            case &#39;stop&#39;:
+                $this-&gt;stop();
+                break;
+            case &#39;status&#39;:
+                $this-&gt;status();
+                break;
+            default:
+                echo &quot;Argv start|stop|status &quot; . PHP_EOL;
+                break;
+        }
+    }
+
+}
+
+$deamon = new \Deamon();
+$deamon-&gt;run($argv);
+</code></pre>
+<h3 id="运行方式"><a href="#运行方式" class="headerlink" title="运行方式"></a>运行方式</h3><ul>
+<li>开启守护进程：php test.php start</li>
+<li>停止守护进程：php test.php stop</li>
+<li>查看守护进程的状态：php test.php status</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://lihengtt.github.io/2019/08/05/PHP%E7%BC%96%E5%86%99%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/" data-id="cuid39a6tfwTrYLs9aM7qyo4n" data-title="PHP编写守护进程" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swoole/" rel="tag">swoole</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/10/php-fpm%E5%AE%89%E8%A3%85redis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          php-fpm安装redis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/26/%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">php装饰器设计</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Centos/" rel="tag">Centos</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome%E6%8F%92%E4%BB%B6/" rel="tag">Chrome插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES/" rel="tag">ES</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google-Vision/" rel="tag">Google Vision</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5%E7%BD%91%E9%A1%B5%E5%94%A4%E9%86%92app/" rel="tag">H5网页唤醒app</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/" rel="tag">JS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Laravel/" rel="tag">Laravel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/" rel="tag">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OCR/" rel="tag">OCR</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/" rel="tag">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHPSTORM/" rel="tag">PHPSTORM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SOCKS5/" rel="tag">SOCKS5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH2/" rel="tag">SSH2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scheme/" rel="tag">Scheme</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/" rel="tag">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/asyncio/" rel="tag">asyncio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/" rel="tag">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/imap/" rel="tag">imap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/intent/" rel="tag">intent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php/" rel="tag">php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/php-fpm/" rel="tag">php-fpm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python3/" rel="tag">python3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recat/" rel="tag">recat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swoole/" rel="tag">swoole</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tcp/" rel="tag">tcp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thinkphp/" rel="tag">thinkphp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%82%E6%AD%A5IO/" rel="tag">异步IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%BA%E7%A8%8B/" rel="tag">携程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9E%B6%E6%9E%84/" rel="tag">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B3%E6%98%8E/" rel="tag">申明</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%96%E7%A0%81/" rel="tag">编码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1/" rel="tag">设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Centos/" style="font-size: 10px;">Centos</a> <a href="/tags/Chrome%E6%8F%92%E4%BB%B6/" style="font-size: 12.5px;">Chrome插件</a> <a href="/tags/ES/" style="font-size: 15px;">ES</a> <a href="/tags/Google-Vision/" style="font-size: 10px;">Google Vision</a> <a href="/tags/H5%E7%BD%91%E9%A1%B5%E5%94%A4%E9%86%92app/" style="font-size: 10px;">H5网页唤醒app</a> <a href="/tags/JS/" style="font-size: 15px;">JS</a> <a href="/tags/Laravel/" style="font-size: 10px;">Laravel</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Nginx/" style="font-size: 12.5px;">Nginx</a> <a href="/tags/OCR/" style="font-size: 10px;">OCR</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/PHPSTORM/" style="font-size: 10px;">PHPSTORM</a> <a href="/tags/SOCKS5/" style="font-size: 10px;">SOCKS5</a> <a href="/tags/SSH2/" style="font-size: 10px;">SSH2</a> <a href="/tags/Scheme/" style="font-size: 10px;">Scheme</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/asyncio/" style="font-size: 10px;">asyncio</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/imap/" style="font-size: 10px;">imap</a> <a href="/tags/intent/" style="font-size: 10px;">intent</a> <a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/mysql/" style="font-size: 12.5px;">mysql</a> <a href="/tags/php/" style="font-size: 17.5px;">php</a> <a href="/tags/php-fpm/" style="font-size: 10px;">php-fpm</a> <a href="/tags/python3/" style="font-size: 10px;">python3</a> <a href="/tags/recat/" style="font-size: 10px;">recat</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/swoole/" style="font-size: 10px;">swoole</a> <a href="/tags/tcp/" style="font-size: 10px;">tcp</a> <a href="/tags/thinkphp/" style="font-size: 10px;">thinkphp</a> <a href="/tags/%E5%BC%82%E6%AD%A5IO/" style="font-size: 10px;">异步IO</a> <a href="/tags/%E6%90%BA%E7%A8%8B/" style="font-size: 10px;">携程</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%94%B3%E6%98%8E/" style="font-size: 10px;">申明</a> <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 10px;">编码</a> <a href="/tags/%E8%AE%BE%E8%AE%A1/" style="font-size: 10px;">设计</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/">December 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">June 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/12/05/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/01/ssh2%E6%8F%90%E7%A4%BA%E6%97%A0%E6%B3%95%E4%BA%A4%E6%8D%A2%E5%8A%A0%E5%AF%86%E5%AF%86%E9%92%A5/">ssh2提示无法交换加密密钥</a>
+          </li>
+        
+          <li>
+            <a href="/2021/08/17/%E8%B4%9F%E8%BD%BD%E6%8E%92%E6%9F%A5%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/">负载排查日志记录</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/02/Laravel-Vue-api%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/">Laravel-Vue-api数据加密解密</a>
+          </li>
+        
+          <li>
+            <a href="/2021/06/09/SOCKS5%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/">SOCKS5一键脚本</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 李恒<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
