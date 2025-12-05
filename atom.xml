@@ -6,7 +6,7 @@
   <link href="https://lihengtt.github.io/atom.xml" rel="self"/>
   
   <link href="https://lihengtt.github.io/"/>
-  <updated>2025-12-05T07:26:53.792Z</updated>
+  <updated>2025-12-05T08:06:42.773Z</updated>
   <id>https://lihengtt.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>李恒 · 个人简历</title>
+    <link href="https://lihengtt.github.io/2025/12/05/%E6%9D%8E%E6%81%92-%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/"/>
+    <id>https://lihengtt.github.io/2025/12/05/%E6%9D%8E%E6%81%92-%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/</id>
+    <published>2025-12-05T07:30:00.000Z</published>
+    <updated>2025-12-05T08:06:42.773Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h1><ul><li>姓名：李恒</li><li>职位：软件工程师</li><li>地点：中国 · 四川省</li></ul><h1 id="个人简介"><a href="#个人简介" class="headerlink" title="个人简介"></a>个人简介</h1><ul><li>擅长 Laravel、ThinkPHP、Yii 等 PHP 框架</li><li>熟练掌握 Swoole、Hyperf 协程框架，熟练使用 Workerman</li><li>对系统架构、分布式部署、微服务架构有实践经验与方法论</li><li>注重代码可读性与优雅设计，重视规范化与高质量注释</li></ul><h1 id="技能栈"><a href="#技能栈" class="headerlink" title="技能栈"></a>技能栈</h1><ul><li>后端：PHP（Laravel&#x2F;TP&#x2F;Yii&#x2F;Hyperf&#x2F;Swoole&#x2F;Workerman）、Node.js</li><li>前端：React、Vue、Uni-app、Electron、JavaScript、TypeScript、CSS、Sass</li><li>其他：Python、C++、Java、Shell</li></ul><h1 id="框架与架构经验"><a href="#框架与架构经验" class="headerlink" title="框架与架构经验"></a>框架与架构经验</h1><p>– 高并发与协程：基于 Swoole&#x2F;Hyperf 的协程服务与 IO 密集型任务优化<br>– 微服务与分布式：服务拆分、接口治理、配置中心、熔断限流与灰度发布<br>– 系统工程：日志链路、性能分析、可观测性与故障排查流程建设</p><h1 id="价值观与习惯"><a href="#价值观与习惯" class="headerlink" title="价值观与习惯"></a>价值观与习惯</h1><p>– 重视注释与命名，追求可维护的架构与清晰的边界<br>– 偏好自动化与工程化实践（CI&#x2F;CD、监控告警）<br>– 在复杂系统中坚持“简化、拆分、分层”的设计原则<br>– 不倾向“屎山代码”，尽可能减少冗余，追求积木式开发与高复用性</p><h1 id="技术主张"><a href="#技术主张" class="headerlink" title="技术主张"></a>技术主张</h1><ul><li>语言选择务实：在飞速迭代的时代，没有“最好的语言”，应基于业务场景选型</li><li>接口开发首选 PHP：快速便捷、交付效率高，作为接口层是我的最优选择</li><li>安全取决于工程实践：安全问题多源于开发与规范，重视工程化与流程保障</li><li>性能与扩展性：通过分发&#x2F;分片&#x2F;队列等手段扩展系统性能与吞吐</li><li>底层服务选型：对性能敏感的底层模块使用更适合的语言实现</li></ul><h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><p>– GitHub：<code>https://github.com/lihengtt</code><br>– 邮箱：<code>138868082@qq.com</code></p><h1 id="教育经历"><a href="#教育经历" class="headerlink" title="教育经历"></a>教育经历</h1><ul><li>南京科技职业学院（中专）<ul><li>时间：2013–2015</li></ul></li></ul><h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><ul><li><p>绵阳兴信网络科技公司</p><ul><li>时间：2016–2018</li><li>职责：负责外包项目的设计与开发</li></ul></li><li><p>四川木雀科技有限公司</p><ul><li>时间：2018–至今</li></ul></li></ul><h1 id="项目经历"><a href="#项目经历" class="headerlink" title="项目经历"></a>项目经历</h1><details><summary><strong>LINKWIFI · 本地商家与 WiFi 运营平台</strong> — 小程序 + 后台一体化</summary><ul><li>概述：基于微信小程序的本地商家与 WiFi 运营平台，覆盖商家管理、WiFi 配置、订单支付与收益结算全流程</li><li>技术栈：Uni-app、Vue&#x2F;Vuex；Laravel 8、Sanctum、laravel-admin、MySQL；RESTful API（统一响应）</li><li>核心功能：商家&#x2F;分类管理、附近检索；WiFi 配网与二维码；订单&#x2F;钱包&#x2F;提现；邀请与团队；地图与帮助中心</li><li>职责：后端分层实现（仓储&#x2F;服务&#x2F;控制器）、数据库迁移与数据填充、前端分类选择器与表单校验、联调与文档</li><li>亮点：分类系统打通、批量任务队列分批处理、统一响应与异常封装（api-docs）</li><li>成果：打通业务闭环、提升连接体验；接口与数据结构规范化，降低联调成本</li></ul></details><details><summary><strong>Rsync Deployment · VSCode 文件同步插件</strong> — rsync 驱动的高效部署</summary><ul><li>概述：面向 Web 开发与运维的 VSCode 插件，rsync + SSH 提供稳定高效的文件同步，减少手动上传错误，保障多环境一致</li><li>功能：服务器&#x2F;路径&#x2F;规则配置；本地&#x2F;远程文件树；手动&#x2F;自动同步；日志与性能统计</li><li>技术：VSCode Extension API、TypeScript、Node.js（fs&#x2F;child_process）、chokidar、WebView；Workspace Settings + JSON</li><li>亮点：Profile 化多环境配置、增量&#x2F;断点续传、完整审计与错误链路</li><li>成果：一键式同步替代手工发布，交付效率显著提升，环境一致性稳定</li></ul></details><details><summary><strong>mologin 浏览器 · 指纹与环境隔离</strong> — Chromium 二次开发</summary><ul><li>定位：虚拟浏览器技术生成可控指纹，替代 VPS&#x2F;虚拟机多账号管理，面向防关联与大规模运营</li><li>技术：PHP + MySQL 后端；Electron 客户端；Chromium 内核二次开发</li><li>职责：后端账号&#x2F;环境&#x2F;策略服务；环境配置与状态同步；策略下发与高可用保障</li><li>亮点：指纹伪装（分辨率&#x2F;字体&#x2F;语言&#x2F;UA 等）与噪声注入；虚拟环境隔离单机规模化（百&#x2F;千级），独立代理&#x2F;分辨率&#x2F;语言策略</li><li>成果：稳定隔离与可控指纹，安全可靠；降低运维成本，规模化管理更轻量</li></ul></details><details><summary><strong>域名搜索服务平台</strong> — 智能生成与批量检测</summary><ul><li>概述：关键词&#x2F;AI 生成、批量可用性与 WHOIS 查询；分层订阅（游客&#x2F;免费&#x2F;基础&#x2F;专业&#x2F;企业）、配额与速率限制；中英双语与动态语言包</li><li>技术栈：Vue3&#x2F;TS&#x2F;Vite&#x2F;AntD&#x2F;I18n；Laravel10&#x2F;Sanctum&#x2F;Mail；MySQL&#x2F;Redis；Python(FastAPI&#x2F;asyncio&#x2F;aiohttp)；Stripe、Name.com；Docker&#x2F;Nginx&#x2F;PM2；AI 抽象层（OpenAI&#x2F;Claude&#x2F;通义）</li><li>架构：分层（Controller→Service→Repository→Clients）；端到端任务编排（前端→入队→Python 执行→状态回写→导出）；多语言后端+前端 I18n</li><li>核心功能：生成策略（前后缀&#x2F;组合&#x2F;正则&#x2F;AI 思考过程）；批量检测（≤500&#x2F;次，文本&#x2F;文件导入）；WHOIS 批量与详情；用户中心与导出；计费与配额</li><li>任务流程：提交→校验→入队→进行中→完成&#x2F;失败；支持重试&#x2F;删除&#x2F;导出与筛选统计</li><li>安全与合规：Sanctum 认证、邮箱验证、节流；Nginx CORS、语言头；Stripe Webhooks 安全处理</li><li>运维：Docker 编排、Nginx 反代；Redis 队列与 Python 并行；诊断工具与环境切换</li></ul></details><details><summary><strong>虚拟卡平台</strong> — 微服务支付发行与授权</summary><ul><li>概述：微服务架构，目标安全&#x2F;高可用&#x2F;低延迟，覆盖虚拟卡发行、账户资金管理与交易授权</li><li>分层：API 网关；应用服务层（编排与策略）；核心业务层（授权&#x2F;账户&#x2F;发卡）；数据层（MySQL&#x2F;Redis&#x2F;审计）</li><li>核心业务：授权毫秒级（PHP8 + Swoole&#x2F;Hyperf + Redis）；账户强一致事务与对账；发卡生命周期&#x2F;风控&#x2F;限额</li><li>关键技术：协程化服务、连接池、异步批处理；Docker + K8s 滚动升级&#x2F;健康检查&#x2F;熔断限流；HSM&#x2F;KMS 令牌化符合 PCI DSS；外部对接银行&#x2F;卡组织&#x2F;KYC</li><li>成果：合规前提下低延迟授权与高稳定资金服务；架构可扩展，便于多机构对接与业务扩张</li></ul></details>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;姓名：李恒&lt;/li&gt;
+&lt;li&gt;职位：软件工程师&lt;/li&gt;
+&lt;li&gt;地点：中国 · 四川省&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+      
+    
+    
+    
+    <category term="关于" scheme="https://lihengtt.github.io/categories/%E5%85%B3%E4%BA%8E/"/>
+    
+    
+    <category term="简历" scheme="https://lihengtt.github.io/tags/%E7%AE%80%E5%8E%86/"/>
+    
+    <category term="关于我" scheme="https://lihengtt.github.io/tags/%E5%85%B3%E4%BA%8E%E6%88%91/"/>
+    
+  </entry>
   
   <entry>
     <title>ssh2提示无法交换加密密钥</title>
@@ -412,27 +443,6 @@
     <category term="docker" scheme="https://lihengtt.github.io/tags/docker/"/>
     
     <category term="redis" scheme="https://lihengtt.github.io/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP编写守护进程</title>
-    <link href="https://lihengtt.github.io/2019/08/05/PHP%E7%BC%96%E5%86%99%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/"/>
-    <id>https://lihengtt.github.io/2019/08/05/PHP%E7%BC%96%E5%86%99%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</id>
-    <published>2019-08-05T03:41:44.000Z</published>
-    <updated>2025-12-05T07:26:53.789Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li><p>进程根据状态可以分为三种进程，守护进程，僵尸进程，孤儿进程。今天我们着重来分析下守护进程。</p><h3 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h3>  <hr />  #### 简介  <span id="more"></span>  守护进程 (daemon) 是一类在后台运行的特殊进程，用于执行特定的系统任务。很多守护进程在系统引导的时候启动，并且一直运行直到系统关闭。另一些只在需要的时候才启动，完成任务后就自动结束。  <h4 id="创建步骤"><a href="#创建步骤" class="headerlink" title="创建步骤"></a>创建步骤</h4></li></ul><p>####1. 创建子进程，终止父进程<br>    由于守护进程是脱离控制终端的，因此首先创建子进程，终止父进程，使得程序在 shell 终端里造成一个已经运行完毕的假象。<br>    之后所有的工作都在子进程中完成，而用户在 shell 终端里则可以执行其他的命令，从而使得程序以僵尸进程形式运行，在形式 I 上做到了与控制终端的脱离。<br>####2. 在子进程中创建新会话<br>    这个步骤是创建守护进程中最重要的一步，在这里使用的是系统函数 setsid。<br>    setsid 函数用于创建一个新的会话，并担任该会话组的组长。<br>    调用 setsid 的三个作用：让进程摆脱原会话的控制、让进程摆脱原进程组的控制和让进程摆脱原控制终端的控制。<br>    在调用 fork 函数时，子进程全盘拷贝父进程的会话期 (session，是一个或多个进程组的集合)、进程组、控制终端等，虽然父进程退出了，但原先的会话期、进程组、控制终端等并没有改变，因此，那还不是真正意义上使两者独立开来。<br>    setsid 函数能够使进程完全独立出来，从而脱离所有其他进程的控制。</p><p>####3. 改变工作目录<br>    使用fork创建的子进程会继承父进程的当前工作目录。<br>    由于子进程运行的过程中，当前目录所在的文件系统不能被卸载，因此，我们需要把当前工作目录换成其他路径，如<code>/</code>或<code>/tmp</code>等。<br>    改变工作目录的常见函数是chdir。<br>####4. 重设文件创建掩码<br>    文件创建掩码是指屏蔽掉文件创建时的对应位。<br>    由于使用 fork 函数新建的子进程继承了父进程的文件创建掩码，这就给该子进程使用文件带来了诸多的麻烦。<br>    因此，把文件创建掩码设置为 0，可以大大增强该守护进程的灵活性。<br>    设置文件创建掩码的函数是 umask，通常的使用方法为 umask (0)。<br>####5. 关闭文件描述符<br>    用 fork 新建的子进程会从父进程那里继承一些已经打开了的文件。<br>    这些被打开的文件可能永远不会被守护进程读或写，但它们一样消耗系统资源，可能导致所在的文件系统无法卸载。<br>    在上面的第二步之后，守护进程已经与所属的控制终端失去了联系。<br>    因此从终端输入的字符不可能达到守护进程，守护进程中用常规方法（如printf）输出的字符也不可能在终端上显示出来。<br>    所以，文件描述符为0、1和2 的3个文件（常说的输入、输出和报错）已经失去了存在的价值，也应被关闭。</p><p>##code：</p><pre><code class="language-php">&lt;?phpclass Deamon{    protected $_pidFile;    public function __construct()    {        $this-&gt;_pidFile = &#39;/var/www/html/queue/public/pid.log&#39;;        $this-&gt;_checkPcntl();    }    /**     * 创建守护进程核心函数     * @return string|void     */    private function _demonize()    {        if (php_sapi_name() != &#39;cli&#39;) {            die(&#39;Should run in CLI&#39;);        }        //创建子进程        $pid = pcntl_fork();        if ($pid == -1) {            return &#39;fork faile&#39;;        } elseif ($pid) {            //终止父进程            exit(&#39;parent process&#39;);        }        //在子进程中创建新的会话        if (posix_setsid() === -1) {            die(&#39;Could not detach&#39;);        }        //改变工作目录        chdir(&#39;/&#39;);        //重设文件创建的掩码        umask(0);        $fp = fopen($this-&gt;_pidFile, &#39;w&#39;) or die(&quot;Can&#39;t create pid file&quot;);        //把当前进程的id写入到文件中        fwrite($fp, posix_getpid());        fclose($fp);        //关闭文件描述符        fclose(STDIN);        fclose(STDOUT);        fclose(STDERR);        //运行守护进程的逻辑        $this-&gt;job();        return;    }    /**     * 守护进程的任务     */    private function job()    {        //TODO 你的守护经常需要执行的任务        while (true) {            file_put_contents(&#39;/var/www/html/queue/public/job.log&#39;, &#39;job&#39; . PHP_EOL, FILE_APPEND);            sleep(5);        }    }    /**     * 获取守护进程的id     * @return int     */    private function _getPid()    {        //判断存放守护进程id的文件是否存在        if (!file_exists($this-&gt;_pidFile)) {            return 0;        }        $pid = intval(file_get_contents($this-&gt;_pidFile));        if (posix_kill($pid, SIG_DFL)) {//判断该进程是否正常运行中            return $pid;        } else {            unlink($this-&gt;_pidFile);            return 0;        }    }    /**     * 判断pcntl拓展     */    private function _checkPcntl()    {        !function_exists(&#39;pcntl_signal&#39;) &amp;&amp; die(&#39;Error:Need PHP Pcntl extension!&#39;);    }    private function _message($message)    {        printf(&quot;%s  %d %d  %s&quot; . PHP_EOL, date(&quot;Y-m-d H:i:s&quot;), posix_getpid(), posix_getppid(), $message);    }    /**     * 开启守护进程     */    private function start()    {        if ($this-&gt;_getPid() &gt; 0) {            $this-&gt;_message(&#39;Running&#39;);        } else {            $this-&gt;_demonize();            $this-&gt;_message(&#39;Start&#39;);        }    }    /**     * 停止守护进程     */    private function stop()    {        $pid = $this-&gt;_getPid();        if ($pid &gt; 0) {            //通过向进程id发送终止信号来停止进程            posix_kill($pid, SIGTERM);            unlink($this-&gt;_pidFile);            echo &#39;Stoped&#39; . PHP_EOL;        } else {            echo &quot;Not Running&quot; . PHP_EOL;        }    }    private function status()    {        if ($this-&gt;_getPid() &gt; 0) {            $this-&gt;_message(&#39;Is Running&#39;);        } else {            echo &#39;Not Running&#39; . PHP_EOL;        }    }    public function run($argv)    {        $param = is_array($argv) &amp;&amp; count($argv) == 2 ? $argv[1] : null;        switch ($param) {            case &#39;start&#39;:                $this-&gt;start();                break;            case &#39;stop&#39;:                $this-&gt;stop();                break;            case &#39;status&#39;:                $this-&gt;status();                break;            default:                echo &quot;Argv start|stop|status &quot; . PHP_EOL;                break;        }    }}$deamon = new \Deamon();$deamon-&gt;run($argv);</code></pre><h3 id="运行方式"><a href="#运行方式" class="headerlink" title="运行方式"></a>运行方式</h3><ul><li>开启守护进程：php test.php start</li><li>停止守护进程：php test.php stop</li><li>查看守护进程的状态：php test.php status</li></ul>]]></content>
-    
-    
-    <summary type="html">PHP 创建守护进程</summary>
-    
-    
-    
-    
-    <category term="PHP" scheme="https://lihengtt.github.io/tags/PHP/"/>
-    
-    <category term="swoole" scheme="https://lihengtt.github.io/tags/swoole/"/>
     
   </entry>
   
