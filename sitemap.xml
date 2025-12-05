@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://lihengtt.github.io/2021/08/17/%E8%B4%9F%E8%BD%BD%E6%8E%92%E6%9F%A5%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/05/22/%E8%87%B4%E6%AD%89%E7%94%B3%E6%98%8E%E4%B9%8B%E5%89%8D%E6%96%87%E7%AB%A0%E4%B8%A2%E5%A4%B1/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/04/%E7%90%86%E8%A7%A3%E9%AB%98%E5%86%85%E8%81%9A%E4%BD%8E%E8%80%A6%E5%90%88/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2020/12/02/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95php%E4%BB%A3%E7%A0%81/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2020/03/31/%E5%9F%BA%E4%BA%8Emysql%E7%9A%84http%E6%8F%92%E4%BB%B6/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2023/11/01/ssh2%E6%8F%90%E7%A4%BA%E6%97%A0%E6%B3%95%E4%BA%A4%E6%8D%A2%E5%8A%A0%E5%AF%86%E5%AF%86%E9%92%A5/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2020/01/06/thinkphp%E8%B0%83%E7%94%A8sqlserver%E5%82%A8%E5%AD%98%E8%BF%87%E7%A8%8B%E8%BF%94%E5%9B%9E%E5%A4%9A%E4%B8%AA%E7%BB%93%E6%9E%9C%E9%9B%86/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/24/js%E5%A4%8D%E5%88%B6%E5%92%8Cjs%E8%AF%86%E5%88%AB%E5%90%84%E5%A4%A7%E8%9C%98%E8%9B%9B/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/12/26/php-imap/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2021/06/09/SOCKS5%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2021/01/07/centos%E6%89%A9%E5%AE%B9Swap%E5%88%86%E5%8C%BA/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/08/05/PHP%E7%BC%96%E5%86%99%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2020/10/31/PHP-IOC%E5%AE%B9%E5%99%A8/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/04/PHP%E5%BC%80%E5%8F%91%E5%BD%93%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/09/09/Mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2020/11/16/Nginx-File-not-Found/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2021/07/02/Laravel-Vue-api%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86%E8%A7%A3%E5%AF%86/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2021/04/28/MACPHP7-4%E5%AE%89%E8%A3%85SSH2/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/05/22/JS%E8%8E%B7%E5%8F%96URL%E5%8F%82%E6%95%B0/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/12/24/HTMLInputElement/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/09/24/H5%E7%BD%91%E9%A1%B5%E5%94%A4%E9%86%92app-%E5%88%A4%E6%96%ADapp%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/12/19/Google-Vision-OCR/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2020/11/18/ERR-INCOMPLETE-CHUNKED-ENCODING/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/05/Chrome%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91-%E4%B8%80/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/06/Chrome%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BA%8C/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/03/Base64%E7%BC%96%E7%A0%81%E8%AE%A4%E8%AF%86/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/05/28/3-6%E5%8D%8F%E7%A8%8B%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/08/10/php-fpm%E5%AE%89%E8%A3%85redis/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/08/15/%E6%85%A2%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90-phpfpm%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/2019/06/26/%E8%A3%85%E9%A5%B0%E5%99%A8%E8%AE%BE%E8%AE%A1/</loc>
+    
+    <lastmod>2025-12-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://lihengtt.github.io/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/python3/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E5%BC%82%E6%AD%A5IO/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E6%90%BA%E7%A8%8B/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/asyncio/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/PHP/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Chrome%E6%8F%92%E4%BB%B6/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/javascript/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Nginx/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/php/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Google-Vision/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/OCR/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/H5%E7%BD%91%E9%A1%B5%E5%94%A4%E9%86%92app/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/intent/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Scheme/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/JS/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/ES/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/recat/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Laravel/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Vue/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/SSH2/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/mysql/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/swoole/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Centos/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/SOCKS5/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/Linux/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/docker/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/redis/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/imap/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/thinkphp/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/http/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/tcp/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/PHPSTORM/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/php-fpm/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E6%9E%B6%E6%9E%84/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/%E7%94%B3%E6%98%8E/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://lihengtt.github.io/tags/linux/</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+</urlset>
